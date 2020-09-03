@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeTask", "RangeTask\Rang
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeStarTask", "RangeStarTask\RangeStarTask.csproj", "{A3F29BF3-0ABD-4612-A358-5155552445D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesTask", "ShapesTask\ShapesTask.csproj", "{7AA07CB6-11CD-403B-81FA-FC7C547AB138}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A3F29BF3-0ABD-4612-A358-5155552445D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3F29BF3-0ABD-4612-A358-5155552445D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3F29BF3-0ABD-4612-A358-5155552445D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA07CB6-11CD-403B-81FA-FC7C547AB138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA07CB6-11CD-403B-81FA-FC7C547AB138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA07CB6-11CD-403B-81FA-FC7C547AB138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA07CB6-11CD-403B-81FA-FC7C547AB138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
