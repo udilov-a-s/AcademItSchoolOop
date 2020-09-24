@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArrayListHomeTask
 {
@@ -36,7 +33,7 @@ namespace ArrayListHomeTask
 
             List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            for (int i = 0; i < numbers.Count(); i++)
+            for (int i = 0; i < numbers.Count; i++)
             {
                 if (numbers[i] % 2 == 0)
                 {
@@ -50,17 +47,17 @@ namespace ArrayListHomeTask
             Console.WriteLine();
 
             List<int> listWithRepeats = new List<int> { 1, 5, 2, 1, 3, 5 };
-            List<int> listWithoutPeapeats = new List<int>(listWithRepeats.Count());
+            List<int> listWithoutRepeats = new List<int>(listWithRepeats.Count);
 
             foreach (int n in listWithRepeats)
             {
-                if (!listWithoutPeapeats.Contains(n))
+                if (!listWithoutRepeats.Contains(n))
                 {
-                    listWithoutPeapeats.Add(n);
+                    listWithoutRepeats.Add(n);
                 }
             }
 
-            Console.WriteLine("Список без повторов: " + string.Join(", ", listWithoutPeapeats));
+            Console.WriteLine("Список без повторов: " + string.Join(", ", listWithoutRepeats));
         }
     }
 }
