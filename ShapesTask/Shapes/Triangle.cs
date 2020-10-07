@@ -1,35 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ShapesTask
+namespace ShapesTask.Shapes
 {
     class Triangle : IShape
     {
-        private readonly double X1;
-        private readonly double Y1;
-        private readonly double X2;
-        private readonly double Y2;
-        private readonly double X3;
-        private readonly double Y3;
+        private double x1 { get; set; }
+
+        private double y1 { get; set; }
+
+        private double x2 { get; set; }
+
+        private double y2 { get; set; }
+
+        private double x3 { get; set; }
+
+        private double y3 { get; set; }
 
         public Triangle(double x1, double y1, double x2, double y2, double x3, double y3)
         {
-            X1 = x1;
-            Y1 = y1;
-            X2 = x2;
-            Y2 = y2;
-            X3 = x3;
-            Y3 = y3;
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+            this.x3 = x3;
+            this.y3 = y3;
         }
 
         public double GetArea()
         {
-            var lengthA = GetSideLength(X1, Y1, X2, Y2);
-            var lengthB = GetSideLength(X2, Y2, X3, Y3);
-            var lengthC = GetSideLength(X3, Y3, X1, Y1);
+            var lengthA = GetSideLength(x1, y1, x2, y2);
+            var lengthB = GetSideLength(x2, y2, x3, y3);
+            var lengthC = GetSideLength(x3, y3, x1, y1);
             var semiperimeter = (lengthA + lengthB + lengthC) / 2;
 
             return Math.Sqrt(semiperimeter * (semiperimeter - lengthA)
@@ -39,21 +40,21 @@ namespace ShapesTask
 
         public double GetHeight()
         {
-            return Math.Max(Y1, Math.Max(Y2, Y3)) - Math.Min(Y1, Math.Min(Y2, Y3));
+            return Math.Max(y1, Math.Max(y2, y3)) - Math.Min(y1, Math.Min(y2, y3));
         }
 
         public double GetPerimeter()
         {
-            var lengthA = GetSideLength(X1, Y1, X2, Y2);
-            var lengthB = GetSideLength(X2, Y2, X3, Y3);
-            var lengthC = GetSideLength(X3, Y3, X1, Y1);
+            var lengthA = GetSideLength(x1, y1, x2, y2);
+            var lengthB = GetSideLength(x2, y2, x3, y3);
+            var lengthC = GetSideLength(x3, y3, x1, y1);
 
             return lengthA + lengthB + lengthC;
         }
 
         public double GetWidth()
         {
-            return Math.Max(X1, Math.Max(X2, X3)) - Math.Min(X1, Math.Min(X2, X3));
+            return Math.Max(x1, Math.Max(x2, x3)) - Math.Min(x1, Math.Min(x2, x3));
         }
 
         private static double GetSideLength(double x1, double y1, double x2, double y2)
@@ -63,9 +64,9 @@ namespace ShapesTask
 
         public override string ToString()
         {
-            var lengthA = GetSideLength(X1, Y1, X2, Y2);
-            var lengthB = GetSideLength(X2, Y2, X3, Y3);
-            var lengthC = GetSideLength(X3, Y3, X1, Y1);
+            var lengthA = GetSideLength(x1, y1, x2, y2);
+            var lengthB = GetSideLength(x2, y2, x3, y3);
+            var lengthC = GetSideLength(x3, y3, x1, y1);
             return
                 $"Треугольник. Площадь: {GetArea():0.####}, периметр: {GetPerimeter():0.####}, стороны: {lengthA:0.####}, {lengthB:0.####}, {lengthC:0.####}";
         }
@@ -75,12 +76,12 @@ namespace ShapesTask
             var prime = 19;
             var hash = 1;
 
-            hash = prime * hash + X1.GetHashCode();
-            hash = prime * hash + X2.GetHashCode();
-            hash = prime * hash + X3.GetHashCode();
-            hash = prime * hash + Y1.GetHashCode();
-            hash = prime * hash + Y2.GetHashCode();
-            hash = prime * hash + Y3.GetHashCode();
+            hash = prime * hash + x1.GetHashCode();
+            hash = prime * hash + x2.GetHashCode();
+            hash = prime * hash + x3.GetHashCode();
+            hash = prime * hash + y1.GetHashCode();
+            hash = prime * hash + y2.GetHashCode();
+            hash = prime * hash + y3.GetHashCode();
 
             return hash;
         }
@@ -99,9 +100,9 @@ namespace ShapesTask
 
             var triangle = (Triangle)objectToCompare;
 
-            return triangle.X1 == X1 && triangle.Y1 == Y1 &&
-                   triangle.X2 == X2 && triangle.Y2 == Y2 &&
-                   triangle.X3 == X3 && triangle.Y3 == Y3;
+            return triangle.x1 == x1 && triangle.y1 == y1 &&
+                   triangle.x2 == x2 && triangle.y2 == y2 &&
+                   triangle.x3 == x3 && triangle.y3 == y3;
         }
     }
 }

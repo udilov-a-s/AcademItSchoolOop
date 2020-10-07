@@ -1,70 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ShapesTask.Shapes;
+using ShapesTask.Compapers;
 
 namespace ShapesTask
 {
     class ShapesMain
     {
-        public static IShape GetMaxArea(List<IShape> shapes, int index)
+        public static IShape GetShapeWithMaxArea(List<IShape> shapes, int index)
         {
-            shapes.Sort(new AreaComparer());
             if (index >= 0 && index < shapes.Count)
             {
+                shapes.Sort(new AreaComparer());
+
                 return shapes[index];
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 
-        public static IShape GetMaxPerimeter(List<IShape> shapes, int index)
+        public static IShape GetShapeWithMaxPerimeter(List<IShape> shapes, int index)
         {
-            shapes.Sort(new PerimeterComparer());
             if (index >= 0 && index < shapes.Count)
             {
+                shapes.Sort(new PerimeterComparer());
+
                 return shapes[index];
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 
         static void Main()
         {
             var shapes = new List<IShape>
             {
-            new Square(9),
-            new Square(5),
-            new Square(11),
+                new Square(9),
+                new Square(5),
+                new Square(11),
 
-            new Rectangle(2, 7),
-            new Rectangle(3, 18),
-            new Rectangle(3.5, 18.5),
+                new Rectangle(2, 7),
+                new Rectangle(3, 18),
+                new Rectangle(3.5, 18.5),
 
-            new Triangle(1, 2, 3, 4, 5, 6),
-            new Triangle(0, 12, 2, 5, 2.5, 1.5),
-            new Triangle(4, 5, 6.5, 0, 3, 0),
+                new Triangle(1, 2, 3, 4, 5, 6),
+                new Triangle(0, 12, 2, 5, 2.5, 1.5),
+                new Triangle(4, 5, 6.5, 0, 3, 0),
 
-            new Circle(1),
-            new Circle(2.5),
-            new Circle(2.6)
+                new Circle(1),
+                new Circle(2.5),
+                new Circle(2.6)
             };
 
-            var firstAreaShape = GetMaxArea(shapes, 0);
+            var firstAreaShape = GetShapeWithMaxArea(shapes, 0);
             Console.WriteLine("Первая по площади фигура: " + firstAreaShape);
-            var secondAreaShape = GetMaxArea(shapes, 1);
+            var secondAreaShape = GetShapeWithMaxArea(shapes, 1);
             Console.WriteLine("Вторая по площади фигура: " + secondAreaShape);
 
             Console.WriteLine();
 
-            var firstPerimeterShape = GetMaxPerimeter(shapes, 0);
+            var firstPerimeterShape = GetShapeWithMaxPerimeter(shapes, 0);
             Console.WriteLine("Первая по периметру фигура: " + firstPerimeterShape);
-            var secondPerimeterShape = GetMaxPerimeter(shapes, 1);
+            var secondPerimeterShape = GetShapeWithMaxPerimeter(shapes, 1);
             Console.WriteLine("Вторая по периметру фигура: " + secondPerimeterShape);
 
             Console.WriteLine();

@@ -1,38 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ShapesTask
+namespace ShapesTask.Shapes
 {
     class Square : IShape
     {
-        private readonly double SideLenght;
+        private double sideLenght;
 
         public Square(double sideLenght)
         {
-            SideLenght = sideLenght;
+            this.sideLenght = sideLenght;
         }
 
         public double GetArea()
         {
-            return Math.Pow(SideLenght, 2);
+            return Math.Pow(sideLenght, 2);
         }
 
         public double GetHeight()
         {
-            return SideLenght;
+            return sideLenght;
         }
 
         public double GetWidth()
         {
-            return SideLenght;
+            return sideLenght;
         }
 
         public double GetPerimeter()
         {
-            return SideLenght * 4;
+            return sideLenght * 4;
         }
 
         public override string ToString()
@@ -42,7 +38,7 @@ namespace ShapesTask
 
         public override int GetHashCode()
         {
-            return SideLenght.GetHashCode();
+            return sideLenght.GetHashCode();
         }
 
         public override bool Equals(object objectToCompare)
@@ -59,7 +55,7 @@ namespace ShapesTask
 
             var square = (Square)objectToCompare;
 
-            return square.SideLenght == SideLenght;
+            return square.sideLenght == sideLenght;
         }
     }
 }

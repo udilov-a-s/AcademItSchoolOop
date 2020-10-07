@@ -1,45 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShapesTask
+﻿namespace ShapesTask.Shapes
 {
     class Rectangle : IShape
     {
-        private readonly double Width;
-        private readonly double Height;
+        private double width { get; set; }
+
+        private double height { get; set; }
 
         public Rectangle(double width, double height)
         {
-            Width = width;
-            Height = height;
+            this.width = width;
+            this.height = height;
         }
 
         public double GetArea()
         {
-            return Width * Height;
+            return width * height;
         }
 
         public double GetWidth()
         {
-            return Width;
+            return width;
         }
 
         public double GetHeight()
         {
-            return Height;
+            return height;
         }
 
         public double GetPerimeter()
         {
-            return 2 * (Width + Height);
+            return 2 * (width + height);
         }
 
         public override string ToString()
         {
-            return $"Прямоугольник. Площадь: {GetArea():0.####}, периметр: {GetPerimeter():0.####}, ширина: {Width:0.####}, высота {Height:0.####}";
+            return $"Прямоугольник. Площадь: {GetArea():0.####}, периметр: {GetPerimeter():0.####}, ширина: {width:0.####}, высота {height:0.####}";
         }
 
         public override int GetHashCode()
@@ -47,8 +42,8 @@ namespace ShapesTask
             var prime = 19;
             var hash = 1;
 
-            hash = prime * hash + Width.GetHashCode();
-            hash = prime * hash + Height.GetHashCode();
+            hash = prime * hash + width.GetHashCode();
+            hash = prime * hash + height.GetHashCode();
 
             return hash;
         }
@@ -67,7 +62,7 @@ namespace ShapesTask
 
             var rectangle = (Rectangle)objectToCompare;
 
-            return rectangle.Width == Width && rectangle.Height == Height;
+            return rectangle.width == width && rectangle.height == height;
         }
     }
 }
