@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RangeStarTask
 {
@@ -31,19 +26,19 @@ namespace RangeStarTask
             return (number - From >= -epsilon) && (To - number >= -epsilon);
         }
 
-        public void Print()
+        public override string ToString()
         {
-            Console.WriteLine("(" + From + "; " + To + ")");
+           return "(" + From + "; " + To + ")";
         }
 
-        public bool hasIntersection(Range range)
+        private bool HasIntersection(Range range)
         {
             return From < range.To && range.From < To;
         }
 
-        public Range getIntersection(Range range)
+        public Range GetIntersection(Range range)
         {
-            if (hasIntersection(range))
+            if (HasIntersection(range))
             {
                 return new Range(Math.Max(From, range.From), Math.Min(To, range.To));
             }
@@ -51,9 +46,9 @@ namespace RangeStarTask
             return null;
         }
 
-        public Range[] getUnion(Range range)
+        public Range[] GetUnion(Range range)
         {
-            if ((From <= range.To) && (range.From <= To))
+            if (From <= range.To && range.From <= To)
             {
                 return new Range[] { new Range(Math.Min(From, range.From), Math.Max(To, range.To)) };
             }
@@ -61,9 +56,9 @@ namespace RangeStarTask
             return new Range[] { new Range(From, To), new Range(range.From, range.To) };
         }
 
-        public Range[] getDifference(Range range)
+        public Range[] GetDifference(Range range)
         {
-            if (!hasIntersection(range))
+            if (!HasIntersection(range))
             {
                 return new Range[] { new Range(From, To) };
             }

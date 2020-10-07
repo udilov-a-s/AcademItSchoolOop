@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RangeStarTask
 {
@@ -58,7 +54,7 @@ namespace RangeStarTask
                     }
 
                     Range range = new Range(from, to);
-                    range.Print();
+                    Console.WriteLine(range.ToString());
 
                     double rangeLength = range.GetLength();
                     Console.WriteLine("Длина диапазона равна: " + rangeLength);
@@ -118,22 +114,22 @@ namespace RangeStarTask
 
                     if (commandCode == 2)
                     {
-                        Range intersection = range1.getIntersection(range2);
+                        Range intersection = range1.GetIntersection(range2);
 
                         Console.Write("Результат операции: ");
 
-                        if (intersection != null)
+                        if (intersection == null)
                         {
-                            intersection.Print();
+                            Console.WriteLine("пересечения нет");
                         }
                         else
                         {
-                            Console.WriteLine("пересечения нет");
+                            Console.WriteLine(intersection.ToString());
                         }
                     }
                     else if (commandCode == 3)
                     {
-                        Range[] union = range1.getUnion(range2);
+                        Range[] union = range1.GetUnion(range2);
 
                         Console.WriteLine("Результат операции: ");
 
@@ -141,7 +137,7 @@ namespace RangeStarTask
                     }
                     else
                     {
-                        Range[] difference = range1.getDifference(range2);
+                        Range[] difference = range1.GetDifference(range2);
 
                         if (difference.Length == 0)
                         {
@@ -161,7 +157,6 @@ namespace RangeStarTask
                 Console.WriteLine("Результат операции: ");
                 Console.WriteLine("Вы ввели неизвестную команду!");
             }
-
         }
     }
 }

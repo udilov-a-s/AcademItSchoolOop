@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeTask", "RangeTask\RangeTask.csproj", "{BF019862-2B7C-4F0C-B01D-A65614BA091D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeStarTask", "RangeStarTask\RangeStarTask.csproj", "{A3F29BF3-0ABD-4612-A358-5155552445D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesTask", "ShapesTask\ShapesTask.csproj", "{7AA07CB6-11CD-403B-81FA-FC7C547AB138}"
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF019862-2B7C-4F0C-B01D-A65614BA091D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF019862-2B7C-4F0C-B01D-A65614BA091D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF019862-2B7C-4F0C-B01D-A65614BA091D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF019862-2B7C-4F0C-B01D-A65614BA091D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A3F29BF3-0ABD-4612-A358-5155552445D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3F29BF3-0ABD-4612-A358-5155552445D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3F29BF3-0ABD-4612-A358-5155552445D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
